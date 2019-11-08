@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.bordered {
+    color: red;
+    border-color: green;
+    border-style: dashed;
+}
+
+.display-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
