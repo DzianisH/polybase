@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+p {
+  margin: 0;
+}
+
 .bordered {
     color: red;
     border-color: green;

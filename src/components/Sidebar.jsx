@@ -1,5 +1,5 @@
 import React from 'react';
-import Menu from './Menu';
+import Menu from '../containers/Menu';
 import './Sidebar.css'
 
 export default () => (

@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import './App.css'
-import Panel from './Panel';
+import Panel from '../containers/Panel';
 import Footer from './Footer';
 
 function App() {
