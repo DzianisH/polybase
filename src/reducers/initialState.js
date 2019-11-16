@@ -1,45 +1,57 @@
-const initialState = Object.freeze({
+module.exports = {
     groups: [
         {
+            id: 1,
             name: 'name 1',
             children: [
                 {
+                    id: 11,
                     name: 'name 1.1'
                 },
                 {
+                    id: 12,
                     name: 'name 1.2'
                 }
             ]
         },
         {
+            id: 2,
             name: 'name 2',
             children: [
                 {
+                    id: 21,
                     name: 'name 2.1'
                 }
             ]
         },
         {
+            id: 3,
             name: 'name 3',
             children: [
                 {
+                    id: 31,
                     name: 'name 3.1'
                 },
                 {
+                    id: 32,
                     name: 'name 3.2',
                     children: [
                         {
-                            name: 'name name 3.2.1'
+                            id: 321,
+                            name: 'name 3.2.1'
                         },
                         {
-                            name: 'name name 3.2.2'
+                            id: 322,
+                            name: 'name 3.2.2'
                         }
                     ]
                 },
                 {
+                    id: 33,
                     name: 'name 3.3',
                     children: [
                         {
+                            id: 331,
                             name: 'name 3.3.1'
                         }
                     ]
@@ -47,11 +59,4 @@ const initialState = Object.freeze({
             ]
         }
     ]
-});
-
-export default function reduce(state = initialState, action = {}) {
-  switch (action.type) {
-    default:
-      return state;
-  }
-}
+};

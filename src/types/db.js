@@ -1,0 +1,1 @@
+export const DB_GROUP_SELECTED = 'DB_GROUP_SELECTED';

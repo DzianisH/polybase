@@ -1,4 +1,21 @@
 import React from 'react';
-import './Panel.css'
+import {connect} from 'react-redux';
+import DefaultPanel from '../components/DefaultPanel';
+import ShowDBPanel from '../components/ShowDBPanel';
 
-export default () => <div className='Panel bordered'>I'm Panel</div>
+
+const panel = props => {
+    if(props.group) {
+        return <ShowDBPanel group={props.group}/>;
+    } else {
+        return <DefaultPanel/>;
+    }
+};
+
+const mapStateToProps = state => {
+    return {
+        group: state.selectedGroup
+    }
+}
+
+export default connect(mapStateToProps)(panel);
