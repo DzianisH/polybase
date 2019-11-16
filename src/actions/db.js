@@ -1,8 +1,15 @@
 import * as types from '../types/db';
 
-export function selectGroup(id) {
+export function selectGroupById(id) {
     return {
-        type: types.DB_GROUP_SELECTED,
+        type: types.NODE_SELECTED,
         payload: {id}
+    };
+}
+
+export function selectGroupByName(name) {
+    return {
+        type: types.NODE_SELECTED,
+        payload: {name}
     };
 }

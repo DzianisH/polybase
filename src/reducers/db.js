@@ -3,29 +3,39 @@ const initialState = Object.freeze(require('./initialState'));
 
 export default function (state = initialState, action = {}) {
   switch (action.type) {
-    case types.DB_GROUP_SELECTED:
+    case types.NODE_SELECTED:
         return Object.freeze({
             ...state,
-            selectedGroup: selectGroup(state.groups, action.payload.id)
+            selectedNode: selectNode(state.nodes, action.payload)
         });
     default:
       return state;
   }
 }
 
-const selectGroup = (groups, groupId) => {
-  const {id, name} = findGroup(groups, groupId);
-  return {id, name};
+const selectNode = (nodes, selector) => {
+  const {id, name} = findNode(nodes, createComparator(selector));
+  const node = {id, name};
+  return node;
 }
 
-const findGroup = (groups = [], groupId) => {
-  for(const group of groups) {
-    if(group.id === groupId) {
-      return group;
+const createComparator = selector => {
+  const {id, name} = selector;
+
+  return id 
+    ? node => node.id === id
+    : node => node.name === name;
+
+}
+
+const findNode = (nodes = [], comparator) => {
+  for(const node of nodes) {
+    if(comparator(node)) {
+      return node;
     }
-    const innerGroup = findGroup(group.children, groupId);
-    if(innerGroup) {
-      return innerGroup;
+    const innerNode = findNode(node.children, comparator);
+    if(innerNode) {
+      return innerNode;
     }
   }
   return undefined;

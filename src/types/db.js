@@ -1,1 +1,1 @@
-export const DB_GROUP_SELECTED = 'DB_GROUP_SELECTED';
+export const NODE_SELECTED = 'NODE_SELECTED';

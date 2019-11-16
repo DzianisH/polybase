@@ -1,21 +1,12 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import {Switch, Route} from 'react-router-dom';
 import DefaultPanel from '../components/DefaultPanel';
-import ShowDBPanel from '../components/ShowDBPanel';
+import ShowNodePanel from './ShowNodePanel';
 
 
-const panel = props => {
-    if(props.group) {
-        return <ShowDBPanel group={props.group}/>;
-    } else {
-        return <DefaultPanel/>;
-    }
-};
-
-const mapStateToProps = state => {
-    return {
-        group: state.selectedGroup
-    }
-}
-
-export default connect(mapStateToProps)(panel);
+export default () => (
+    <Switch>
+        <Route path='/db/:nodeName' component={ShowNodePanel}/>
+        <Route path='/' component={DefaultPanel}/>
+    </Switch>
+);

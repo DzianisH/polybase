@@ -1,8 +1,8 @@
 module.exports = {
-    groups: [
+    nodes: [
         {
             id: 1,
-            name: 'name 1',
+            name: 'name1',
             children: [
                 {
                     id: 11,
