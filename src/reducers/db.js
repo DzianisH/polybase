@@ -1,5 +1,5 @@
 import * as types from '../types/db';
-const initialState = Object.freeze(require('./initialState'));
+const initialState = readInitalState();
 
 export default function (state = initialState, action = {}) {
   switch (action.type) {
@@ -14,8 +14,11 @@ export default function (state = initialState, action = {}) {
 }
 
 const selectNode = (nodes, selector) => {
-  const {id, name} = findNode(nodes, createComparator(selector));
-  const node = {id, name};
+  let node = findNode(nodes, createComparator(selector));
+  if(node) {
+    node = {...node};
+    node.children = undefined;
+  }
   return node;
 }
 
@@ -40,3 +43,23 @@ const findNode = (nodes = [], comparator) => {
   }
   return undefined;
 };
+
+function readInitalState() {
+  const state = require('./initialState');
+  populateIds(state.nodes);
+  console.log(state);
+  return Object.freeze(state);
+}
+
+function populateIds(nodes = [], firstId = 0) {
+  let id = firstId;
+  for(const node of nodes) {
+    node.id = id++;
+    if(!node.fullName) {
+      node.fullName = node.name;
+    }
+
+    id = populateIds(node.children, id);
+  }
+  return id;
+}
