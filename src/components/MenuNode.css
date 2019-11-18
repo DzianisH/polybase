@@ -1,14 +1,27 @@
 .MenuNode {
-    background-color: cadetblue;
-    min-height: 1.2em;
+    background-color: rgb(253, 255, 192);
+    min-height: 1.8em;
     padding-left: 1em;
     transition: 0.3s;
 }
 
-.MenuNode-active-link {
-    background-color: chartreuse;
+.MenuNode-active {
+    background-color: rgb(208, 225, 235);
+}
+
+.MenuNode-link {
+    margin-right: auto;
+    margin-left: auto;
+    width: auto;
+    color: rgb(32, 32, 32);
+    text-decoration: none;
+}
+
+.MenuNode-active > .MenuNode-link, .MenuNode-sing {
+    color: #000;
 }
 
 .MenuNode-sing {
     cursor: pointer;
+    float: right;
 }

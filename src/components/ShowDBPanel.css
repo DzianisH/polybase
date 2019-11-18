@@ -1,0 +1,48 @@
+.ShowDBPanel-keynote {
+  margin: 0 auto;
+  padding: 0;
+  cursor: pointer;
+}
+
+.ShowDBPanel-keynote:hover > .ShowDBPanel-keynote-name {
+  letter-spacing: 0;
+  width: auto;
+  font-size: 0.9em;
+}
+
+.ShowDBPanel-keynote-name {
+  letter-spacing: -0.1em;
+  width: 0;
+  transition: 0.4s;
+  font-size: 0;
+  margin-right: 0.35em;
+  cursor: default;
+}
+
+.ShowDBPanel-keynote-value {
+  max-height: 1.35em;
+  display: inline;
+}
+
+.ShowDBPanel-hightlighted {
+  background-color: rgb(253, 255, 192);
+}
+
+.ShowDBPanel-links {
+  margin: 0 0.5em;
+  font-size: 0.9em;
+}
+
+.ShowDBPanel-block {
+  margin: 0.35em 0;
+}
+
+.ShowDBPanel-opensource {
+  margin: 0 0.5em 0 auto;
+  font-size: 0.9em;
+}
+
+.ShowDBPanel-feature {
+  background-color: rgb(208, 225, 235);
+  margin: 0 0.35em;
+}

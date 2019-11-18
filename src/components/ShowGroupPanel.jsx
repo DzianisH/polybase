@@ -24,7 +24,7 @@ class ShowGroupPanel extends React.Component {
         const group = this.props.group;
         return (
             <div className='DefaultPanel bordered'>
-                <h2>{group.fullName}</h2>
+                <h2 className='ShowNodePanel-title'>{group.fullName}</h2>
                 <p>{group.summary}</p>
                 {this.renderChildrenLinks(group.children)}
                 <p>{group.description}</p>

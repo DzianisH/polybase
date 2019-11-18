@@ -1,4 +1,5 @@
 module.exports = {
+    selectedNode: {},
     nodes: [
         {
             name: 'RDBSM',
@@ -22,7 +23,7 @@ module.exports = {
                     docs: 'https://dev.mysql.com/doc/',
                     partitioninMethod: 'Horizontal partitioning, sharding with MySQL Cluster or MySQL Fabric',
                     replicationMethod: 'Master-master & master-slave replication',
-                    features: ['Secondary inde', 'Concurrency', 'Durability', 'In-memory storing avility', 'ACID', 'Immediate Consistency']
+                    features: ['Secondary index', 'Concurrency', 'Durability', 'In-memory storing avility', 'ACID', 'Immediate Consistency']
                 },
                 {
                     database: true,
@@ -39,7 +40,7 @@ module.exports = {
                     docs: 'https://docs.oracle.com/en/database/',
                     partitioninMethod: 'Horizontal partitioning',
                     replicationMethod: 'Master-master & master-slave replication',
-                    features: ['Secondary inde', 'Concurrency', 'Durability', 'In-memory storing avility', 'ACID', 'Immediate Consistency']
+                    features: ['Secondary index', 'Concurrency', 'Durability', 'In-memory storing avility', 'ACID', 'Immediate Consistency']
                 },
                 {
                     database: true,
@@ -57,7 +58,7 @@ module.exports = {
                     docs: 'https://www.postgresql.org/docs/manuals/',
                     partitioninMethod: 'Partitioning by range, list and (since PostgreSQL 11) by hash',
                     replicationMethod: 'Master-master & master-slave replication',
-                    features: ['Secondary inde', 'Concurrency', 'Durability', 'ACID', 'Immediate Consistency']
+                    features: ['Secondary index', 'Concurrency', 'Durability', 'ACID', 'Immediate Consistency']
                 }
             ]
         },
@@ -88,7 +89,8 @@ module.exports = {
             ]
         },
         {
-            name: 'Wide column stores',
+            name: 'Column stores',
+            fullName: 'Wide column stores',
             summary: 'kv summary',
             dataModel: 'Wide column store',
             description: 'descr for cols',

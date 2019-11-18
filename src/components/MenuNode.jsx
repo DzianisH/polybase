@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import 'material-design-icons';
 import './MenuNode.css';
 
@@ -28,8 +28,17 @@ class MenuNode extends React.Component {
                 onExpandChildren={this.props.onExpandChildren}
                 onCollapseChildren={this.props.onCollapseChildren}
                 shouldExpandChildren={this.props.shouldExpandChildren}
+                isActive={this.props.isActive}
+                createUrl={this.props.createUrl}
                 />;
         });
+    }
+
+
+    getStyles() {
+        return this.props.isActive(this.props.node)
+            ? 'MenuNode bordered MenuNode-active'
+            : 'MenuNode bordered';
     }
 
     render() {
@@ -38,8 +47,8 @@ class MenuNode extends React.Component {
         }
         
         return (
-        <div className='MenuNode'>
-            <NavLink to={`/db/${this.props.node.name}`} activeclassname="MenuNode-active-link">{this.props.node.name}</NavLink>
+        <div className={this.getStyles()}>
+            <Link to={this.props.createUrl(this.props.node)} className="MenuNode-link">{this.props.node.name}</Link>
             {
                 this.renderSign()
             }

@@ -18,8 +18,17 @@ class Menu extends React.Component {
         return this.props.expand.includes(node.id);
     }
 
+    isActive(node) {
+        return node.id === this.props.selectedNode.id;
+    }
+
+    createUrl(node) {
+        return `/db/${node.name}`;
+    }
+
     render() {
         const nodes = this.props.nodes;
+        console.log(this.props)
         if(nodes) {
             return (
                 <div className="Menu">
@@ -29,6 +38,8 @@ class Menu extends React.Component {
                                 onExpandChildren={this.callAction.bind(this, expandChildren)}
                                 onCollapseChildren={this.callAction.bind(this, collapseChildren)}
                                 shouldExpandChildren={this.shouldExpandChildren.bind(this)}
+                                isActive={this.isActive.bind(this)}
+                                createUrl={this.createUrl.bind(this)}
                                 />);
                         })
                     }
@@ -42,6 +53,7 @@ class Menu extends React.Component {
 const mapStateToProps = state => {
     return {
         nodes: state.db.nodes,
+        selectedNode: state.db.selectedNode,
         expand: state.menu.expand
     }
 }
