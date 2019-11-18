@@ -33,7 +33,7 @@ class ShowNodePanel extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        node: state.selectedNode
+        node: state.db.selectedNode
     }
 }
 

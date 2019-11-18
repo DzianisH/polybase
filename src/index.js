@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import {Provider} from 'react-redux';
 import {BrowserRouter as Router} from 'react-router-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import reducer from './store/db/reducer';
+import dbReducer from './store/db/reducer';
+import menuReducer from './store/menu/reducer';
 
+const reducer = combineReducers({
+    db: dbReducer,
+    menu: menuReducer
+});
 const store = createStore(reducer);
 
 ReactDOM.render(

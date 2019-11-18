@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {expandChildren, collapseChildren} from '../store/db/actions'
+import {expandChildren, collapseChildren} from '../store/menu/actions'
 import MenuNode from '../components/MenuNode';
 
 import './Menu.css';
@@ -41,8 +41,8 @@ class Menu extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        nodes: state.nodes,
-        expand: state.expand || []
+        nodes: state.db.nodes,
+        expand: state.menu.expand
     }
 }
 

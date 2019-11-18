@@ -1,22 +1,15 @@
 import * as types from './types';
+import {logState} from '../utils';
+
 const initialState = readInitalState();
 
 export default function (state = initialState, action = {}) {
   switch (action.type) {
     case types.NODE_SELECTED:
-      return selectNode(state, action.payload);
-    case types.EXPAND_CHILDREN:
-      return logState(expandChildren(state, action.payload.id), 'after EXPAND_CHILDREN');
-    case types.COLLAPSE_CHILDREN:
-      return logState(collapseChildren(state, action.payload.id), 'after COLLAPSE_CHILDREN');
+      return logState(selectNode(state, action.payload), action.type);
     default:
       return state;
   }
-}
-
-const logState = (newState, msg) => {
-  console.log(newState, msg);
-  return newState;
 }
 
 const selectNode = (state, selector) => {
@@ -26,20 +19,6 @@ const selectNode = (state, selector) => {
     ...state,
     selectedNode: node
   });
-}
-
-const expandChildren = (state, id) => {
-  const expand = state.expand
-    ? state.expand.concat([id])
-    : [id];  
-  return {...state, expand};
-}
-
-const collapseChildren = (state, id) => {
-  const expand = state.expand
-    ? state.expand.filter(eId => eId !== id)
-    : [];
-  return {...state, expand};
 }
 
 const createComparator = selector => {
