@@ -16,8 +16,19 @@ p {
   margin: 0;
 }
 
+.expandable {
+  transition: 0.4s;
+}
+
+.expandable:hover {
+  font-size: 1.1em;
+}
+
+.expandable:active {
+  font-size: 1.08em;
+}
+
 .bordered {
-    color: red;
     border-color: green;
     border-style: dashed;
 }

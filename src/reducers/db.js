@@ -4,22 +4,42 @@ const initialState = readInitalState();
 export default function (state = initialState, action = {}) {
   switch (action.type) {
     case types.NODE_SELECTED:
-        return Object.freeze({
-            ...state,
-            selectedNode: selectNode(state.nodes, action.payload)
-        });
+      return selectNode(state, action.payload);
+    case types.EXPAND_CHILDREN:
+      return logState(expandChildren(state, action.payload.id), 'after EXPAND_CHILDREN');
+    case types.COLLAPSE_CHILDREN:
+      return logState(collapseChildren(state, action.payload.id), 'after COLLAPSE_CHILDREN');
     default:
       return state;
   }
 }
 
-const selectNode = (nodes, selector) => {
-  let node = findNode(nodes, createComparator(selector));
-  if(node) {
-    node = {...node};
-    node.children = undefined;
-  }
-  return node;
+const logState = (newState, msg) => {
+  console.log(newState, msg);
+  return newState;
+}
+
+const selectNode = (state, selector) => {
+  const node = findNode(state.nodes, createComparator(selector));
+
+  return Object.freeze({
+    ...state,
+    selectedNode: node
+  });
+}
+
+const expandChildren = (state, id) => {
+  const expand = state.expand
+    ? state.expand.concat([id])
+    : [id];  
+  return {...state, expand};
+}
+
+const collapseChildren = (state, id) => {
+  const expand = state.expand
+    ? state.expand.filter(eId => eId !== id)
+    : [];
+  return {...state, expand};
 }
 
 const createComparator = selector => {
@@ -47,7 +67,6 @@ const findNode = (nodes = [], comparator) => {
 function readInitalState() {
   const state = require('./initialState');
   populateIds(state.nodes);
-  console.log(state);
   return Object.freeze(state);
 }
 

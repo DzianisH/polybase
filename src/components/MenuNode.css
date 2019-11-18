@@ -1,4 +1,14 @@
 .MenuNode {
+    background-color: cadetblue;
     min-height: 1.2em;
-    margin-left: 1em;
+    padding-left: 1em;
+    transition: 0.3s;
+}
+
+.MenuNode-active-link {
+    background-color: chartreuse;
+}
+
+.MenuNode-sing {
+    cursor: pointer;
 }

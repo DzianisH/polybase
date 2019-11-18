@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router';
-import {default as ShowNodePanelComponent} from '../components/ShowNodePanel';
+import ShowGroupPanel from '../components/ShowGroupPanel';
+import ShowDBPanel from '../components/ShowDBPanel';
 import {selectGroupByName} from '../actions/db';
 import LoadingPane from '../components/LoadingPane';
 
@@ -18,8 +19,11 @@ class ShowNodePanel extends React.Component {
     render() {
         this.dispatchIfRequired();
 
-        if(this.props.node) {
-            return <ShowNodePanelComponent node={this.props.node}/>
+        const node = this.props.node;
+        if(node) {
+            return node.database 
+                ? <ShowDBPanel db={node}/>
+                : <ShowGroupPanel group={node}/>
         } else {
             return <LoadingPane/>;
         }

@@ -13,3 +13,17 @@ export function selectGroupByName(name) {
         payload: {name}
     };
 }
+
+export function expandChildren(id) {
+    return {
+        type: types.EXPAND_CHILDREN,
+        payload: {id}
+    }
+}
+
+export function collapseChildren(id) {
+    return {
+        type: types.COLLAPSE_CHILDREN,
+        payload: {id}
+    }
+}
