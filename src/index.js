@@ -7,7 +7,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import reducer from './reducers/db';
+import reducer from './store/db/reducer';
 
 const store = createStore(reducer);
 

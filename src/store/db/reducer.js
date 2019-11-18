@@ -1,4 +1,4 @@
-import * as types from '../types/db';
+import * as types from './types';
 const initialState = readInitalState();
 
 export default function (state = initialState, action = {}) {

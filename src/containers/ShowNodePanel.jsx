@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {withRouter} from 'react-router';
 import ShowGroupPanel from '../components/ShowGroupPanel';
 import ShowDBPanel from '../components/ShowDBPanel';
-import {selectGroupByName} from '../actions/db';
+import {selectGroupByName} from '../store/db/actions';
 import LoadingPane from '../components/LoadingPane';
 
 class ShowNodePanel extends React.Component {

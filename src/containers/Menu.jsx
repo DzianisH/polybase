@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {expandChildren, collapseChildren} from '../actions/db'
+import {expandChildren, collapseChildren} from '../store/db/actions'
 import MenuNode from '../components/MenuNode';
 
 import './Menu.css';
