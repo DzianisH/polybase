@@ -1,12 +1,12 @@
 .MenuNode {
-    background-color: rgb(253, 255, 192);
+    background-color: rgb(164, 181, 191);
     min-height: 1.8em;
     padding-left: 1em;
     transition: 0.3s;
 }
 
 .MenuNode-active {
-    background-color: rgb(208, 225, 235);
+    background-color: rgb(1, 152, 171);
 }
 
 .MenuNode-link {

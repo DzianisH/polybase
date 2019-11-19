@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: rgb(60, 60, 60);
-  background-color: rgb(237, 237, 229);
+  background-color: rgb(219, 234, 236)
 }
 
 code {
@@ -30,9 +30,9 @@ h1, h2, h3, h4, h5, h6, p {
   font-size: 1.08em;
 }
 
-.bordered {
+/* .bordered {
   border: 8px solid white;
-}
+} */
 
 .display-flex {
   display: flex;

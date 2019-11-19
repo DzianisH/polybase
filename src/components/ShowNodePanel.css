@@ -3,14 +3,13 @@
     text-decoration: underline;
     font-size: 1.1em;
     min-height: 1.6364em;
-    background-color: rgb(208, 225, 235);
+    background-color: rgb(1, 152, 171);
     font-variant: small-caps;
     cursor: default;
 }
 
 .ShowNodePanel-summary {
-    border-left: 0.2em solid rgb(208, 225, 235);
-    background-color: rgb(208, 225, 235);
+    background-color: rgb(1, 152, 171);
     font-size: 0.9em;
     font-style: italic;
     font-variant: small-caps;

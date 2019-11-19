@@ -21,13 +21,6 @@ export default class ShowDBPanel extends React.Component {
             );
         }
     }
-
-    renderFeatures(db) {
-
-        for(const feature of db.features) {
-            
-        }
-    }
     
     render() {
         const db = this.props.db;
