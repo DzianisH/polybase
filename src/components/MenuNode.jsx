@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import 'material-design-icons';
 import './MenuNode.css';
 
 class MenuNode extends React.Component {
