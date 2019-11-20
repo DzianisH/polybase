@@ -1,20 +1,22 @@
 .ShowNodePanel-title {
     text-align: center;
-    text-decoration: underline;
     font-size: 1.1em;
     min-height: 1.6364em;
+    color: #000;
     background-color: rgb(1, 152, 171);
+    letter-spacing: 0.05em;
     font-variant: small-caps;
     cursor: default;
 }
 
 .ShowNodePanel-summary {
     background-color: rgb(1, 152, 171);
-    font-size: 0.9em;
+    font-size: 0.85em;
     font-style: italic;
     font-variant: small-caps;
     line-height: 1.1em;
     cursor: default;
     padding-bottom: 0.2em;
     margin-bottom: 0.15em;
+    padding-left: 1.25em;
 }

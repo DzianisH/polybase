@@ -10,13 +10,14 @@ class MenuNode extends React.Component {
     renderSign() {
         if(this.props.node.children) {
             if(this.shouldIExpand()) {
-                return <i className="material-icons MenuNode-sing expandable"
-                onClick={this.props.onCollapseChildren.bind(null, this.props.node.id)}>remove</i>;
+                return <i className="material-icons MenuNode-sing"
+                onClick={this.props.onCollapseChildren.bind(null, this.props.node.id)}>arrow_drop_down</i>;
             } else {
-                return <i className="material-icons MenuNode-sing expandable"
-                onClick={this.props.onExpandChildren.bind(null, this.props.node.id)}>add</i>;
+                return <i className="material-icons MenuNode-sing"
+                onClick={this.props.onExpandChildren.bind(null, this.props.node.id)}>arrow_right</i>;
             }
         }
+        return <i className='MenuNode-circle'/>
     }
 
     renderChilder(){
@@ -47,10 +48,10 @@ class MenuNode extends React.Component {
         
         return (
         <div className={this.getStyles()}>
-            <Link to={this.props.createUrl(this.props.node)} className="MenuNode-link">{this.props.node.name}</Link>
             {
                 this.renderSign()
             }
+            <Link to={this.props.createUrl(this.props.node)} className="MenuNode-link">{this.props.node.name}</Link>
             {
                 this.renderChilder()
             }

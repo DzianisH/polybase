@@ -1,5 +1,5 @@
 .MenuNode {
-    background-color: rgb(164, 181, 191);
+    background-color: #24292e;
     min-height: 1.8em;
     padding-left: 1em;
     transition: 0.3s;
@@ -13,15 +13,36 @@
     margin-right: auto;
     margin-left: auto;
     width: auto;
-    color: rgb(32, 32, 32);
+    color: #fff;
     text-decoration: none;
 }
 
-.MenuNode-active > .MenuNode-link, .MenuNode-sing {
-    color: #000;
+.MenuNode-link:hover {
+    color: hsla(0,0%,100%,.7);
 }
 
 .MenuNode-sing {
+    color: #fff;
     cursor: pointer;
-    float: right;
+}
+
+.MenuNode-sing:hover {
+    color: hsla(0,0%,100%,.7);
+}
+
+
+.MenuNode-active > .MenuNode-link, .MenuNode-active > .MenuNode-sing {
+    color: #000;
+}
+
+.MenuNode-active > .MenuNode-circle {
+    background-color: #000;
+}
+.MenuNode-circle {
+    height: 0.3em;
+    width: 0.3em;
+    margin-right: 0.3em;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
 }

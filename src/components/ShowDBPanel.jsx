@@ -1,6 +1,7 @@
 import React from 'react';
-import './DefaultPanel.css'
-import './ShowDBPanel.css'
+import './DefaultPanel.css';
+import './ShowDBPanel.css';
+
 
 export default class ShowDBPanel extends React.Component {
 
@@ -8,15 +9,19 @@ export default class ShowDBPanel extends React.Component {
         if(db.openSource) {
             return (
                 <div className='ShowDBPanel-opensource display-flex'>
-                    <i className="material-icons" style={{color: 'green'}}>done</i>
-                    <p>OpenSource</p>
+                    <p>
+                        <i className="material-icons" style={{color: 'green'}}>done</i>
+                        Open-Source
+                    </p>
                 </div>
             );
         } else {
             return (
                 <div className='ShowDBPanel-opensource display-flex'>
-                    <i className="material-icons ShowDBPanel-no" style={{color: 'red'}}>cancel</i>
-                    <p style={{textDecoration: 'line-through'}}>OpenSource</p>
+                    <p style={{textDecoration: 'line-through'}}>
+                        <i className="material-icons ShowDBPanel-no" style={{color: 'red'}}>cancel</i>
+                        Open-Source
+                    </p>
                 </div>
             );
         }
@@ -26,18 +31,20 @@ export default class ShowDBPanel extends React.Component {
         const db = this.props.db;
         return (
             <div className='DefaultPanel bordered'>
-                <h2 className='ShowNodePanel-title'>{db.fullName}</h2>
-                <p className="ShowNodePanel-summary">{db.summary}</p>
-                <div className='display-flex ShowDBPanel-block'>
-                    <div className='ShowDBPanel-links display-flex'>
-                        <a href={db.docs}>Tech docs</a>
+            <h2 className='ShowNodePanel-title'>{db.fullName}</h2>
+                <div>
+                    <div className='display-flex ShowDBPanel-upperleftdata'>
+                        <div className='vcenter'>
+                            <a className='ShowDBPanel-link' href={db.docs} target='_blank' rel='noopener noreferrer'>Tech docs</a>
+                            <a className='ShowDBPanel-link' href={db.website} target='_blank' rel='noopener noreferrer'>Website</a>
+                        </div>
+                        {this.renderOpenSource(db)}
                     </div>
-                    <div className='ShowDBPanel-links display-flex'>
-                        <a href={db.website}>Website</a>
-                    </div>
-                    {this.renderOpenSource(db)}
+                    <p className='ShowDBPanel-summary'>
+                        {db.summary}
+                    </p>
                 </div>
-                <div className='display-flex ShowDBPanel-block'>
+                {/* <div className='display-flex ShowDBPanel-block'>
                     <div className='ShowDBPanel-keynote display-flex'>
                         <p className='ShowDBPanel-keynote-name'>License:</p>
                         <p className='ShowDBPanel-keynote-value ShowDBPanel-hightlighted'>{db.license}</p>
@@ -65,7 +72,7 @@ export default class ShowDBPanel extends React.Component {
                 </div>
                 <div className='ShowDBPanel-block'>
                     <p>{db.description}</p>
-                </div>
+                </div> */}
             </div>
         );
     }

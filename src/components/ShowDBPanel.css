@@ -1,48 +1,39 @@
-.ShowDBPanel-keynote {
-  margin: 0 auto;
-  padding: 0;
-  cursor: pointer;
+.ShowDBPanel-link {
+  font-size: 0.7em;
+  font-variant: all-small-caps;
+  text-decoration: none;
+  white-space: nowrap;
+  display: block;
 }
 
-.ShowDBPanel-keynote:hover > .ShowDBPanel-keynote-name {
-  letter-spacing: 0;
-  width: auto;
-  font-size: 0.9em;
-}
-
-.ShowDBPanel-keynote-name {
-  letter-spacing: -0.1em;
-  width: 0;
-  transition: 0.4s;
-  font-size: 0;
-  margin-right: 0.35em;
-  cursor: default;
-}
-
-.ShowDBPanel-keynote-value {
-  max-height: 1.35em;
-  display: inline;
-}
-
-.ShowDBPanel-hightlighted {
-  background-color: rgb(164, 181, 191);
-}
-
-.ShowDBPanel-links {
-  margin: 0 0.5em;
-  font-size: 0.9em;
-}
-
-.ShowDBPanel-block {
-  margin: 0.35em 0;
+.ShowDBPanel-links:hover {
+  color: rgb(60, 60, 60);
 }
 
 .ShowDBPanel-opensource {
-  margin: 0 0.5em 0 auto;
-  font-size: 0.9em;
+  margin: auto 0.5em auto;
+  font-size: 0.85em;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+  width: min-content;
 }
 
-.ShowDBPanel-feature {
+.ShowDBPanel-table {
   background-color: rgb(1, 152, 171);
-  margin: 0 0.35em;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.ShowDBPanel-upperleftdata {
+  width: max-content;
+  float: left;
+}
+
+.ShowDBPanel-summary {
+  color: #000;
+  font-variant: small-caps;
+  padding-left: 0.6em;
+  font-size: 0.9em;
+  background-color: rgb(1, 152, 171);
+  display: grid;
 }

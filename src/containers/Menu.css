@@ -1,5 +1,5 @@
 /* Move me to components */
 .Menu {
-    overflow-y: scroll;
-    max-height: 65vh;
+    overflow-y: hidden;
+    overflow-x: none;
 }

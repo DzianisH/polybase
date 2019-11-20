@@ -71,7 +71,8 @@ module.exports = {
             children: [
                 {
                     database: true,
-                    name: 'MongoDB',
+                    name: 'Mongo',
+                    fullName: 'MongoDB',
                     summary: 'One of the most popular document stores available both as a fully managed cloud service and for deployment on self-managed infrastructure',
                     dataModel: 'Document store',
                     secondaryDataModel: 'Search engine',
