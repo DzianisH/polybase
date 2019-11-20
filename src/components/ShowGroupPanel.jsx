@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import './DefaultPanel.css'
+import './Panel.css'
 import './ShowNodePanel.css'
+import './ShowGroupPanel.css'
 
 class ShowGroupPanel extends React.Component {
     renderChildrenLinks(children) {
@@ -9,11 +10,12 @@ class ShowGroupPanel extends React.Component {
             return <div>No particular implementations yet.</div>;
         }
         return (
-            <div>
+            <div className='Panel-paragraph ShowNodePanel-visualbreak'>
                 <span>Implementations:</span>
                 {
                     children.map((child, i) => {
-                        return <Link to={`/db/${child.name}`} key={i}>{child.fullName}</Link>;
+                        return <Link to={`/db/${child.name}`} key={i}
+                            className='ShowNodePanel-link'>{child.fullName}</Link>;
                     })
                 }
             </div>
@@ -23,11 +25,11 @@ class ShowGroupPanel extends React.Component {
     render() {
         const group = this.props.group;
         return (
-            <div className='DefaultPanel bordered'>
-                <h2 className='ShowNodePanel-title'>{group.fullName}</h2>
-                <p>{group.summary}</p>
+            <div className='Panel bordered'>
+                <h2 className='Panel-title'>{group.fullName}</h2>
+                <p className='Panel-paragraph'>{group.summary}</p>
                 {this.renderChildrenLinks(group.children)}
-                <p>{group.description}</p>
+                <p className='Panel-paragraph'>{group.description}</p>
             </div>
         );
     }

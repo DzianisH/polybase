@@ -1,6 +1,15 @@
 .Footer {
-    height: 9vh;
+    height: 5vh;
     text-align: center;
     background-color: #24292e;
     color: #fff;
+}
+
+.Footer-link {
+    font-size: 1.2em;
+    font-variant: all-small-caps;
+    font-family: monospace;
+    color: #fff;
+    display: inline;
+    cursor: pointer;
 }

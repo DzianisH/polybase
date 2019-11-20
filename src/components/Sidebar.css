@@ -1,5 +1,7 @@
 .Sidebar {
-    height: 81vh;
-    width: 20vw;
+    height: 87vh;
+    width: 15vw;
     background-color: #24292e;
+    overflow-y: hidden;
+    overflow-x: none;
 }

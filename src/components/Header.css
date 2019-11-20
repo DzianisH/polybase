@@ -1,6 +1,21 @@
 .Header {
-    height: 10vh;
-    background-color: #24292e;
-    color: #fff;
+  height: 8vh;
+  background-color: #24292e;
+  color: #fff;
+  cursor: pointer;
+}
+
+.Header > h1 {
+  margin-left: 0.1em;
+}
+
+.Header-excuse {
+  display: none;
+}
+
+@media (max-width: 60em), (max-height: 45em) {
+  .Header-excuse {
+    display: flex;
+    font-size: 0.9em;
   }
-  
+}

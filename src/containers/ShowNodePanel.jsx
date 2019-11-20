@@ -4,7 +4,7 @@ import {withRouter} from 'react-router';
 import ShowGroupPanel from '../components/ShowGroupPanel';
 import ShowDBPanel from '../components/ShowDBPanel';
 import {selectGroupByName} from '../store/db/actions';
-import LoadingPane from '../components/LoadingPane';
+import NotFoundPane from '../components/NotFoundPane';
 
 class ShowNodePanel extends React.Component {
     dispatchIfRequired() {
@@ -25,7 +25,7 @@ class ShowNodePanel extends React.Component {
                 ? <ShowDBPanel db={node}/>
                 : <ShowGroupPanel group={node}/>
         } else {
-            return <LoadingPane/>;
+            return <NotFoundPane/>;
         }
     }
 }

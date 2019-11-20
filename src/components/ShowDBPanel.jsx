@@ -1,28 +1,83 @@
 import React from 'react';
-import './DefaultPanel.css';
+import './Panel.css';
+import './ShowNodePanel.css';
 import './ShowDBPanel.css';
 
 
 export default class ShowDBPanel extends React.Component {
 
+    renderTitileInfo(db) {
+        return (
+            <div className='ShowDBPanel-titleinfo'>
+                <div className='display-flex ShowDBPanel-upperleftdata'>
+                    <div className='vcenter'>
+                        <a className='ShowNodePanel-link ShowDBPanel-link' style={{display: 'block'}} href={db.docs}
+                            target='_blank' rel='noopener noreferrer'>Tech docs</a>
+                        <a className='ShowNodePanel-link ShowDBPanel-link' style={{display: 'block'}} href={db.website}
+                            target='_blank' rel='noopener noreferrer'>Website</a>
+                    </div>
+                    <div className='ShowDBPanel-opensource display-flex'>
+                        {this.renderOpenSource(db)}
+                    </div>
+                </div>
+                <p className='ShowNodePanel-summary'>
+                    {db.summary}
+                </p>
+            </div>
+        );
+    }
+
+    renderGenInfo(db) {
+        return (
+            <div>
+                <p className='ShowDBPanel-geninfo-block Panel-paragraph'>
+                    {db.name} is <span className='ShowDBPanel-txtfeat'>{db.dataModel}</span> database
+                    with <span className='ShowDBPanel-txtfeat'>{db.transaction} transaction</span> model
+                    and <span className='ShowDBPanel-txtfeat'>{db.consistency} consistency</span> principle for distributed
+                    envs. {this.render2ndDataModel(db)}
+                </p>
+                <p className='ShowDBPanel-geninfo-block Panel-paragraph'>
+                    {db.fullName} provides <code className='ShowDBPanel-txtfeat'>{db.partitionin} partitioning
+                    </code>, <code className='ShowDBPanel-txtfeat'>{db.replication} replication</code> and it lays on <span
+                    className='ShowDBPanel-txtfeat'>{db.cap} vertex</span> according to CAP theorem. Database comes
+                    with <span className='ShowDBPanel-txtfeat'>{db.persistance} persistance</span> algorithm.
+                </p>
+                <p className='ShowDBPanel-geninfo-block Panel-paragraph'>
+                    {db.openSource ? 'Open-Source' : 'Commertial'} software protects
+                    by <span className='ShowDBPanel-txtfeat'>{db.license}</span> license(s).
+                </p>
+            </div>
+        );
+    }
+
+    renderKeyFeats(db) {
+        return (
+            <p className='ShowNodePanel-visualbreak Panel-paragraph'>Key feaures: { db.features.join(', ') }.</p>
+        );
+    }
+
+    render2ndDataModel(db) {
+        if(db.secondaryDataModel) {
+            return (<span>
+                Additionally, it have <span className='ShowDBPanel-txtfeature'>{db.secondaryDataModel}</span> features.
+            </span>);
+        }
+    }
+
     renderOpenSource(db) {
         if(db.openSource) {
             return (
-                <div className='ShowDBPanel-opensource display-flex'>
-                    <p>
-                        <i className="material-icons" style={{color: 'green'}}>done</i>
-                        Open-Source
-                    </p>
-                </div>
+                <p>
+                    <i className="material-icons" style={{color: 'green'}}>done</i>
+                    Open-Source
+                </p>
             );
         } else {
             return (
-                <div className='ShowDBPanel-opensource display-flex'>
-                    <p style={{textDecoration: 'line-through'}}>
-                        <i className="material-icons ShowDBPanel-no" style={{color: 'red'}}>cancel</i>
-                        Open-Source
-                    </p>
-                </div>
+                <p>
+                    <i className="material-icons ShowDBPanel-no" style={{color: 'red'}}>cancel</i>
+                    Proprietary
+                </p>
             );
         }
     }
@@ -30,49 +85,12 @@ export default class ShowDBPanel extends React.Component {
     render() {
         const db = this.props.db;
         return (
-            <div className='DefaultPanel bordered'>
-            <h2 className='ShowNodePanel-title'>{db.fullName}</h2>
-                <div>
-                    <div className='display-flex ShowDBPanel-upperleftdata'>
-                        <div className='vcenter'>
-                            <a className='ShowDBPanel-link' href={db.docs} target='_blank' rel='noopener noreferrer'>Tech docs</a>
-                            <a className='ShowDBPanel-link' href={db.website} target='_blank' rel='noopener noreferrer'>Website</a>
-                        </div>
-                        {this.renderOpenSource(db)}
-                    </div>
-                    <p className='ShowNodePanel-summary'>
-                        {db.summary}
-                    </p>
-                </div>
-                {/* <div className='display-flex ShowDBPanel-block'>
-                    <div className='ShowDBPanel-keynote display-flex'>
-                        <p className='ShowDBPanel-keynote-name'>License:</p>
-                        <p className='ShowDBPanel-keynote-value ShowDBPanel-hightlighted'>{db.license}</p>
-                    </div>
-                    <div className='ShowDBPanel-keynote display-flex'>
-                        <p className='ShowDBPanel-keynote-name'>Data model:</p>
-                        <p className='ShowDBPanel-keynote-value ShowDBPanel-hightlighted'>{db.dataModel}</p>
-                    </div>
-                    <div className='ShowDBPanel-keynote display-flex'>
-                        <p className='ShowDBPanel-keynote-name'>CAP vertex:</p>
-                        <p className='ShowDBPanel-keynote-value ShowDBPanel-hightlighted'>{db.cap}</p>
-                    </div>
-                    <div className='ShowDBPanel-keynote display-flex'>
-                        <p className='ShowDBPanel-keynote-name'>Data persistance algorithm:</p>
-                        <p className='ShowDBPanel-keynote-value ShowDBPanel-hightlighted'>{db.persistanceType}</p>
-                    </div>
-                </div>
-                <div className='ShowDBPanel-block'>
-                    <p><span className='ShowDBPanel-hightlighted'>Secondaty data model:</span> {db.secondaryDataModel}</p>
-                    <p><span className='ShowDBPanel-hightlighted'>Partitionin Method(s):</span> {db.partitioninMethod}</p>
-                    <p><span className='ShowDBPanel-hightlighted'>Replication Method(s):</span> {db.replicationMethod}</p>
-                </div>
-                <div className='ShowDBPanel-block'>
-                    <p>Features: {db.features.map((feat, i)=> <span key={i} className='ShowDBPanel-feature'>{feat}</span>)}</p>
-                </div>
-                <div className='ShowDBPanel-block'>
-                    <p>{db.description}</p>
-                </div> */}
+            <div className='Panel bordered'>
+                <h2 className='Panel-title'>{db.fullName}</h2>
+                { this.renderTitileInfo(db) }
+                { this.renderGenInfo(db) }
+                { this.renderKeyFeats(db) }
+                <p className='Panel-paragraph'>Thus, {db.description}</p>
             </div>
         );
     }

@@ -3,8 +3,6 @@ import {connect} from 'react-redux';
 import {expandChildren, collapseChildren} from '../store/menu/actions'
 import MenuNode from '../components/MenuNode';
 
-import './Menu.css';
-
 class Menu extends React.Component {
     callAction(action, id, e) {
         if(e) {
@@ -19,7 +17,7 @@ class Menu extends React.Component {
     }
 
     isActive(node) {
-        return node.id === this.props.selectedNode.id;
+        return this.props.selectedNode && node.id === this.props.selectedNode.id;
     }
 
     createUrl(node) {
@@ -31,7 +29,7 @@ class Menu extends React.Component {
         console.log(this.props)
         if(nodes) {
             return (
-                <div className="Menu">
+                <div>
                     {
                         nodes.map((node, i) => {
                             return (<MenuNode node={node} key={i}

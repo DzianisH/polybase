@@ -30,7 +30,6 @@
     color: hsla(0,0%,100%,.7);
 }
 
-
 .MenuNode-active > .MenuNode-link, .MenuNode-active > .MenuNode-sing {
     color: #000;
 }
@@ -38,6 +37,7 @@
 .MenuNode-active > .MenuNode-circle {
     background-color: #000;
 }
+
 .MenuNode-circle {
     height: 0.3em;
     width: 0.3em;

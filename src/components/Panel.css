@@ -1,0 +1,21 @@
+.Panel {
+    width: 85vw;
+}
+
+.Panel-title {
+    text-align: center;
+    font-size: 1.1em;
+    min-height: 1.6364em;
+    color: #000;
+    background-color: rgb(1, 152, 171);
+    letter-spacing: 0.05em;
+    font-variant: small-caps;
+    cursor: default;
+}
+
+.Panel-paragraph {
+    padding: 0.3em 0.3em 0.6em 0.1em;
+    text-indent: 0.45em;
+    text-align: justify;
+    color: rgb(62, 62, 62);
+}

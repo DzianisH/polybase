@@ -1,14 +1,11 @@
+.ShowDBPanel-titleinfo {
+  min-height: 2.1em;
+}
+
 .ShowDBPanel-link {
   padding: 0.01em 0.3em;
   font-size: 0.85em;
-  font-family: monospace;
-  text-decoration: none;
-  white-space: nowrap;
   display: block;
-}
-
-.ShowDBPanel-link:hover {
-  color: rgb(60, 60, 60);
 }
 
 .ShowDBPanel-opensource {
@@ -24,4 +21,14 @@
 .ShowDBPanel-upperleftdata {
   width: max-content;
   float: left;
+}
+
+.ShowDBPanel-txtfeat {	
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  margin: auto 0.2em;
+  text-decoration: underline;
+  white-space: pre-wrap;
+  text-decoration-color: rgb(1, 152, 171);
+  cursor: pointer;
 }
