@@ -40,7 +40,7 @@ export default class ShowDBPanel extends React.Component {
                         </div>
                         {this.renderOpenSource(db)}
                     </div>
-                    <p className='ShowDBPanel-summary'>
+                    <p className='ShowNodePanel-summary'>
                         {db.summary}
                     </p>
                 </div>

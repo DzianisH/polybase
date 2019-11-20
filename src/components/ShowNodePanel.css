@@ -10,13 +10,12 @@
 }
 
 .ShowNodePanel-summary {
+    color: #000;
+    font-variant: all-small-caps;
+    padding-left: 0.6em;
+    font-size: 0.9em;
     background-color: rgb(1, 152, 171);
-    font-size: 0.85em;
-    font-style: italic;
-    font-variant: small-caps;
-    line-height: 1.1em;
+    display: grid;
     cursor: default;
-    padding-bottom: 0.2em;
-    margin-bottom: 0.15em;
-    padding-left: 1.25em;
+    line-height: 1.1em;
 }
