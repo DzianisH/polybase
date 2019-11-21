@@ -59,7 +59,7 @@ export default class ShowDBPanel extends React.Component {
     render2ndDataModel(db) {
         if(db.secondaryDataModel) {
             return (<span>
-                Additionally, it have <span className='ShowDBPanel-txtfeature'>{db.secondaryDataModel}</span> features.
+                Additionally, it has <span className='ShowDBPanel-txtfeature'>{db.secondaryDataModel}</span> features.
             </span>);
         }
     }
