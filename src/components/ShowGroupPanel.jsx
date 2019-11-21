@@ -14,7 +14,7 @@ class ShowGroupPanel extends React.Component {
                 <span>Implementations:</span>
                 {
                     children.map((child, i) => {
-                        return <Link to={`db/${child.name}`} key={i}
+                        return <Link to={`/db/${child.name}`} key={i}
                             className='ShowNodePanel-link'>{child.fullName}</Link>;
                     })
                 }

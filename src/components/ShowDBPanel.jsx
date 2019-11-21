@@ -52,14 +52,15 @@ export default class ShowDBPanel extends React.Component {
 
     renderKeyFeats(db) {
         return (
-            <p className='ShowNodePanel-visualbreak Panel-paragraph'>Key feaures: { db.features.join(', ') }.</p>
+            // <p className='ShowNodePanel-visualbreak Panel-paragraph'>Key feaures: { db.features.join(', ') }.</p>
+            <p className='ShowNodePanel-visualbreak Panel-paragraph'>Key feaures: <span className='ShowDBPanel-txtfeat'>{ db.features.join(', ') }</span>.</p>
         );
     }
 
     render2ndDataModel(db) {
         if(db.secondaryDataModel) {
             return (<span>
-                Additionally, it has <span className='ShowDBPanel-txtfeature'>{db.secondaryDataModel}</span> features.
+                Additionally, it has <span className='ShowDBPanel-txtfeat'>{db.secondaryDataModel}</span> features.
             </span>);
         }
     }
