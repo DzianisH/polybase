@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/polybase/static/css/main.8a6f41a8.chunk.css",
-    "main.js": "/polybase/static/js/main.12225358.chunk.js",
-    "main.js.map": "/polybase/static/js/main.12225358.chunk.js.map",
+    "main.css": "/polybase/static/css/main.960571fe.chunk.css",
+    "main.js": "/polybase/static/js/main.e9c8e28c.chunk.js",
+    "main.js.map": "/polybase/static/js/main.e9c8e28c.chunk.js.map",
     "runtime-main.js": "/polybase/static/js/runtime-main.5a55a60d.js",
     "runtime-main.js.map": "/polybase/static/js/runtime-main.5a55a60d.js.map",
     "static/js/2.4f4d0c52.chunk.js": "/polybase/static/js/2.4f4d0c52.chunk.js",
     "static/js/2.4f4d0c52.chunk.js.map": "/polybase/static/js/2.4f4d0c52.chunk.js.map",
     "index.html": "/polybase/index.html",
-    "precache-manifest.8ca2d87799c9e3e74d86bd533e45aabb.js": "/polybase/precache-manifest.8ca2d87799c9e3e74d86bd533e45aabb.js",
+    "precache-manifest.7235e09f0f21f3be2620e659f6c3c2cc.js": "/polybase/precache-manifest.7235e09f0f21f3be2620e659f6c3c2cc.js",
     "service-worker.js": "/polybase/service-worker.js",
-    "static/css/main.8a6f41a8.chunk.css.map": "/polybase/static/css/main.8a6f41a8.chunk.css.map"
+    "static/css/main.960571fe.chunk.css.map": "/polybase/static/css/main.960571fe.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.5a55a60d.js",
     "static/js/2.4f4d0c52.chunk.js",
-    "static/css/main.8a6f41a8.chunk.css",
-    "static/js/main.12225358.chunk.js"
+    "static/css/main.960571fe.chunk.css",
+    "static/js/main.e9c8e28c.chunk.js"
   ]
 }
