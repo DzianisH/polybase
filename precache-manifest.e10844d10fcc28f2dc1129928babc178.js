@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c5da8cb473ebc9659d8dec969fd99c2d",
+    "revision": "f19945200394622ef49eb0a03c278cb8",
     "url": "/polybase/index.html"
   },
   {
-    "revision": "33260d753aef14386115",
+    "revision": "573457bc9baa31c715b0",
     "url": "/polybase/static/css/main.8a6f41a8.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/polybase/static/js/2.e6de4e4b.chunk.js"
   },
   {
-    "revision": "33260d753aef14386115",
-    "url": "/polybase/static/js/main.2f39f89d.chunk.js"
+    "revision": "573457bc9baa31c715b0",
+    "url": "/polybase/static/js/main.a5759b8a.chunk.js"
   },
   {
     "revision": "9556e167391b82460278",
